@@ -9,6 +9,12 @@ namespace Rectangle_Collision_Lesson
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D barrierTexture, coinTexture, exitTexture, pacLeftTexture, pacRightTexture, pacUpTexture, pacDownTexture, currentPacTexture;
+
+        Rectangle pacRect, exitRect, barrierRect1, barrierRect2, coinRect, window;
+
+        Vector2 pacSpeed;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -19,6 +25,15 @@ namespace Rectangle_Collision_Lesson
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            pacSpeed = Vector2.Zero;
+            pacRect = new Rectangle(10, 10, 60, 60);
+
+            barrierRect1 = new Rectangle(0, 250, 350, 75);
+            barrierRect2 = new Rectangle(450, 250, 350, 75);
+
+            coinRect = new Rectangle(400, 50, 0, 0);
+
 
             base.Initialize();
         }
